@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Start of head -->
+<head>
+	<title></title>
+	<h1>Stop it...</h1>
+	<h2>Get some help!</h2>
+</head>
+
+<link rel="stylesheet" href="css/myStyles.css">
+
+<!-- Start of body -->
+<body>
+	<h3>Yes</h3>
+	<ol>
+		<li>Lime</li>
+		<li>Lemon</li>
+		<li>Grape</li>
+	</ol>	
+
+	<h2>Links:</h2>
+	<a href="index.htm">Home Page</a>
+</body>
+
+<h1>Sample JavaScript real-time in-browser execution</h1>
+
+<script id="js" style="display: block" contenteditable>
+alert('This page is editable'); // edit me!
+</script>
+
+<script>
+(function() {
+
+  var timer,
+      js = document.getElementById('js'),
+      delay = 2000;
+
+  js.onkeyup = function(event) {
+
+    if (typeof timer != "undefined") {
+
+      clearTimeout(timer);
+      timer = 0;
+    }
+
+    timer = setTimeout(executeCode, delay);
+  };
+
+ function executeCode() {
+    var script = document.createElement("script");
+    script.innerHTML = js.innerHTML;
+    js.parentNode.insertBefore(script, js);
+ }
+
+})();
+</script>
+
+</html>

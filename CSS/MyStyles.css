@@ -1,0 +1,21 @@
+tag {att:value}
+
+h2	{
+	font-family:Arial;
+	color:#4f61ab;
+	}
+
+body	{
+	background-color:rgb(174, 111, 222)
+	}
+
+span	{
+	padding: 10px;
+	border: 10px violet;
+	display: inline-block;
+	}
+
+centered{
+	text-align: center;
+	transform: (-50%,-50%)
+	}
